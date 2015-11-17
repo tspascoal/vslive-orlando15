@@ -1,2 +1,2 @@
 # vslive-orlando15
-VSLive demons for VST08 and VSH16
+VSLive demos for VST08 and VSH16
