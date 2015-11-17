@@ -1,0 +1,42 @@
+{
+  "id": "b7bf9330-5e48-11e5-bf96-39bce45a40ed",
+  "name": "HelloWorld",
+  "friendlyName": "Hello World",
+  "description": "Hello World Demo Task",
+  "author": "Tiago Pascoal",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "0",
+    "Patch": "12"
+  },
+  "minimumAgentVersion": "1.83.0",
+  "instanceNameFormat": "HelloWorld $(message)",
+  "inputs": [
+    {
+      "name": "msg",
+      "type": "string",
+      "label": "Message",
+      "defaultValue": "Hello World",
+      "required": true,
+      "helpMarkDown": "Message to echo out"
+    }
+  ],
+  "execution": {
+    "Node": {
+      "target": "helloworld.js",
+      "argumentFormat": ""
+    },
+    "PowerShell": {
+      "target": "$(currentDirectory)\\helloworld.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}
