@@ -1,0 +1,1 @@
+﻿Allows you to see and add tags directy from the build list by using a context menu instead of going into the build detail and setting/viewing the tags from there

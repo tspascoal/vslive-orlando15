@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/app.css" rel="stylesheet" />
+    <title>Tags</title>
+</head>
+<body>
+    <!-- Everything in line, to show how you can add code directly in pages. This means the code is written in javascript instead of typescript.
+        No intellisense either 
+        See addTagApp.ts to see how you can separate code from the HTML page   
+     -->
+    <div id="loading">Loading data...</div>
+    <div id="dataContainer" style="display:none">
+        <div class="tag-title">Tags</div>
+        <span class="build-list-tags">
+            <div class="tfs-tags">
+                <div class="tags-items-container">
+                    <ul id="tagsList"></ul>
+                </div>
+            </div>
+        </span>
+    </div>
+
+    <script src="sdk/scripts/VSS.SDK.js"></script>
+    <script>
+        VSS.init({ usePlatformScripts: true, usePlatformStyles: true });
+
+        VSS.require(["VSS/Service", "TFS/Build/RestClient"], function (VSSService, WebAPI) {
+
+            VSS.ready(function () {
+                var vsoContext = VSS.getWebContext();
+                var parameters = VSS.getConfiguration();
+                var buildClient = VSSService.getCollectionClient(WebAPI.BuildHttpClient);
+
+                buildClient.getBuildTags(vsoContext.project.name, parameters.buildId).then(function (builds) {
+
+                    $("#loading").hide();
+                    $("#dataContainer").show();
+
+                    for (var idx = 0; idx < builds.length; idx++) {
+                        $('<li class="tag-item"><span class="tag-container" dir="ltr"><span class="tag-box" dir="ltr">' + builds[idx] + '</span></span></li>').appendTo("#tagsList");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

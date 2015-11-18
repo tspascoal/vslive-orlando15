@@ -1,0 +1,10 @@
+﻿{
+"package": {
+		"manifestGlobs": ["vss-extension.json"]
+	},
+	"publish": {
+		"galleryUrl": "https://gallery.visualstudio.com/",
+		"token": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+		"vsixPath": "C:\\destination\\extension.vsix"
+	}
+}

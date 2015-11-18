@@ -1,0 +1,22 @@
+{
+  "name": "vso-sms-gateway",
+  "version": "0.0.1",
+  "description": "vs-sms-gateway demo application to show how you can send commands to an VSO account using SMS text messages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tiago Pascoal",
+  "license": "MIT",
+  "homepage" : "http://pascoal.net/vslive-orlando15",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
+    "express": "^4.13.3",
+    "match-words": "^0.1.0",
+    "node-uuid": "^1.4.3",
+    "path": "^0.12.7",
+    "twilio": "^2.5.1",
+    "vso-node-api": "^0.4.2"
+  }
+}

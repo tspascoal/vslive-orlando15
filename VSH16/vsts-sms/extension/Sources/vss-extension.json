@@ -1,0 +1,64 @@
+{
+  "manifestVersion": 1,
+  "id": "vslivedemo-authorize",
+  "version": "0.1.0",
+  "name": "VSLive Authorize Phone Demo",
+
+  "description": "Part of the SMS demo. Allow users to associate and authorize their mobile phone number to send commands to an account",
+  "baseUri": "https://REPLACE WITH YOUR FQDN HOST NAME HERE:3001/",
+  "publisher": "REPLACE WITH YOUR PUBLISHER IDENTIFIER",
+  "icons": {
+    "default": "branding/logo.png"
+  },
+  "categories": [
+    "Integrate"
+  ],
+  "links": {
+    "repository": "https://github.com/tspascoal/vslive-orlando15"
+  },
+  "branding": {
+    "color": "#eff1f3",
+    "theme": "light"
+  },
+  "content": {
+    "details": {
+      "path": "branding/overview.md"
+    }
+  },
+  "screenshots": [
+    {
+      "path": "branding/screen1.png"
+    },
+    {
+      "path": "branding/screen2.png"
+    }
+  ],
+
+  "contributions": [
+    {
+      "id": "authorize-group",
+      "type": "ms.vss-web.hub-group",
+      "description": "Authorize hub",
+      "targets": [
+        "ms.vss-web.account-hub-groups-collection"
+      ],
+      "properties": {
+        "name": "Authorize",
+        "order": 100
+      }
+    },
+    {
+      "id": "authorize-phone",
+      "type": "ms.vss-web.hub",
+      "description": "adds a phone hub.",
+      "targets": [
+        ".authorize-group"
+      ],
+      "properties": {
+        "name": "Phone",
+        "order": 100,
+        "uri": "index.html"
+      }
+    }
+  ]
+}

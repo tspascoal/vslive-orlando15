@@ -1,0 +1,132 @@
+{
+  "manifestVersion": 1,
+  "id": "vslivedemo-buildtags",
+  "version": "0.1.0",
+  "name": "VSLive Build Tags Demo",
+
+  "description": "Build Tags Demo shown at VSLIve Orlando. View and add a tag to a build directly from the builds list.",
+  "publisher": "REPLACE WITH YOUR PUBLISHER IDENTIFIER",
+  "icons": {
+    "default": "branding/logo.png",
+    "large": "branding/logo-large.png",
+    "wide": "branding/logo-wide.png"
+  },
+  "tags": [
+    "Build",
+    "Tags"
+  ],
+  "categories": [
+    "Productivity"
+  ],
+
+  "links": {
+    "repository": "https://github.com/tspascoal/vslive-orlando15"
+  },
+  "branding": {
+    "color": "#eff1f3",
+    "theme": "light"
+  },
+  "content": {
+    "details": {
+      "path": "branding/overview.md"
+    }
+  },
+  "screenshots": [
+    {
+      "path": "branding/screen1.png"
+    }
+  ],
+
+  "scopes": [ "vso.build_execute" ],
+  "contributions": [
+    {
+      "id": "showTagsBuildMenu",
+      "type": "ms.vss-web.action",
+      "description": "Show Tags",
+      "targets": [
+        "ms.vss-build-web.completed-build-menu"
+      ],
+      "properties": {
+        "text": "Show Tags",
+        "title": "Show Tags",
+        "group": "actions",
+        "icon": "img/tag.png",
+        "uri": "showTags.html",
+        "registeredObjectId": "showTagsBuildMenu"
+      }
+    },
+    {
+      "id": "showTagsDialog",
+      "type": "ms.vss-web.control",
+      "description": "contribution to show tags of a build.",
+      "targets": [ ],
+      "properties": {
+        "uri": "showTagsDialog.html"
+      }
+    },
+    {
+      "id": "addTagBuildMenu",
+      "type": "ms.vss-web.action",
+      "description": "Manage Tags",
+      "targets": [
+        "ms.vss-build-web.completed-build-menu"
+      ],
+      "properties": {
+        "text": "Add Tag",
+        "title": "Add a tag to this build",
+        "group": "actions",
+        "icon": "img/tagadd.png",
+        "uri": "addTag.html",
+        "registeredObjectId": "addTagBuildMenu"
+      }
+    },
+    {
+      "id": "addTagForm",
+      "type": "ms.vss-web.control",
+      "description": "form to get the tag name.",
+      "targets": [ ],
+      "properties": {
+        "uri": "addTagForm.html"
+      }
+    }
+  ],
+
+  "files": [
+    {
+      "path": "css",
+      "addressable": true
+    },
+    {
+      "path": "img",
+      "addressable": true
+    },
+    {
+      "path": "sdk",
+      "addressable": true
+    },
+    {
+      "path": "scripts/addTagApp.js",
+      "addressable": true
+    },
+    {
+      "path": "scripts/showTagsApp.js",
+      "addressable": true
+    },
+    {
+      "path": "addTag.html",
+      "addressable": true
+    },
+    {
+      "path": "addTagForm.html",
+      "addressable": true
+    },
+    {
+      "path": "showTags.html",
+      "addressable": true
+    },
+    {
+      "path": "showTagsDialog.html",
+      "addressable": true
+    }
+  ]
+}

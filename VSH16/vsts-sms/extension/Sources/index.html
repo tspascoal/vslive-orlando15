@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Associate phone number to this account</title>
+    <link rel="stylesheet" href="css/app.css" type="text/css" />
+    <script src="sdk/scripts/VSS.SDK.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+    // Initialize the VSS sdk
+    VSS.init({
+        setupModuleLoader: true,
+        moduleLoaderConfig: {
+            paths: {
+                "Scripts": "scripts"
+            }
+        }
+    });
+
+    </script>
+
+    <form action="https://tsp-vslive.cloudapp.net:3001/associate" method="post">
+        <input type="text" name="phoneNumber" maxlength="20"/>
+        <input type="submit" name="Verify" value="associate"/>
+    </form>
+
+    <div id="content"></div>
+</body>
+</html>
