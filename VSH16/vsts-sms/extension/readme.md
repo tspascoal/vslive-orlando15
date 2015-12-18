@@ -1,4 +1,4 @@
-#VSH16 Build Tag Demo source code
+#VSH16 Authorize phone demo
 
 Allows an user to associate and authorize a mobile phone number with an account 
 
